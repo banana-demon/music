@@ -1,60 +1,61 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
 <!-------MUSIC PLAYER BY GLENTHEMES------->
 <script src="//static.tumblr.com/gtjt4bo/QRmphdsdv/glenplayer02.js"></script>
-
-<head>
-<script src="https://kit.fontawesome.com/610c820504.js" crossorigin="anonymous"></script>
 
 <style type="text/css">
 /*-------MUSIC PLAYER BY GLENTHEMES-------*/
 #glenplayer02 {
-position:relative;
-
-#container07;
-bottom:0;
-margin-bottom:10px;
-left:-8.5px;
-margin-left:10px;
-display:flex;
-z-index:99;
+ position:fixed;
+ bottom:0;margin-bottom:20px;
+ left:0;margin-left:20px;
+ display:flex;
+ z-index:99;
 }
-#glenplayer02 a {
-text-decoration:none;
-}
+#glenplayer02 a {text-decoration:none;}
 
 #glenplayer02 > div {
-align-self:center;
--webkit-align-self:center;
+ align-self:center;
+ -webkit-align-self:center;
 }
 
 .music-controls {
-user-select:none;
--webkit-user-select:none;
-width:22px;
-font-size:16px;
-cursor:pointer;
+ user-select:none;
+ -webkit-user-select:none;
+ width:13px;
+ font-size:13px;
+ cursor:pointer;
 }
 
-.playy, .pausee {
--webkit-background-clip: text;
--webkit-text-fill-color: #color ;
--webkit-text-stroke-width: 1px;
--webkit-text-stroke-color: #color;
-font-size: 22px;
+.playy, .pausee {color:#000;} /* color of play & pause buttons */
+
+.pausee {display:none;}
+
+.sonata {
+ margin-left:10px;
+ color:#222; /* color of music note symbol */
 }
 
-.pausee {
-display:none;
+.labeltext {
+ margin-left:8px;
+ font-family:courier new;
+ font-size:9px;
+ color:#222; /* color of song title */
 }
 
 </style>
 <body>
 <!-------MUSIC PLAYER BY GLENTHEMES------->
 <div id="glenplayer02">
+ <div class="music-controls" onclick="songstart();">
+ <div class="playy">►</div>
+ <div class="pausee">❚❚</div>
+ </div> 
+ <div class="sonata"> </div>
+ <div class="labeltext"> song name </div>
+</div><!--end music player--> 
 
-<div class="music-controls" onclick="songstart();">
-<div class="playy" style="display: block;"><span><i class="fa-solid fa-volume-low" aria-hidden="true"></i></span></div>
-<div class="pausee" style="display: none;"><span><i class="fa-solid fa-volume-high" aria-hidden="true"></i></span></div></div>
-</div>
-
-<audio id="tune" src=""></audio>
+<audio id="tune" src="https://dl.dropbox.com/s/22he1ckywvszvcw/Click.mp3"audio"></audio>
 </body>
+
+<div class="labeltext"> </div>
