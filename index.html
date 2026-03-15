@@ -1,30 +1,106 @@
-Amplitude.init({
-"bindings": {
-  37: 'prev',
-  39: 'next',
-  32: 'play_pause'
-},
-"songs": [
-  {
-    "name": "Feel Good",
-    "artist": "Syn Cole",
-    "album": "We Are to Answer",
-    "url": "audio/Syn_Cole-Feel_Good.mp3",
-    "cover_art_url": "img/album.jpg"
-  }
-]
-});
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<link href="//fonts.googleapis.com/css?family=Karla" rel="stylesheet">
 
-window.onkeydown = function(e) {
-  return !(e.keyCode == 32);
-};
+<link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-/*
-Handles a click on the song played progress bar.
-*/
-document.getElementById('button.play').addEventListener('click', function( e ){
-var offset = this.getBoundingClientRect();
-var x = e.pageX - offset.left;
+<!-------MUSIC PLAYER BY GLENTHEMES------->
 
-Amplitude.setSongPlayedPercentage( ( parseFloat( x ) / parseFloat( this.offsetWidth) ) * 100 );
-});
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="//static.tumblr.com/gtjt4bo/QRmphdsdv/glenplayer02.js"></script>
+
+<style>
+#ongaku {
+position: fixed;
+bottom:1em;
+left:1em;
+margin: auto;
+width:35px;
+height:35px;
+z-index:99;
+border:4px double #000; /*Border Colour*/
+background-color:#FACAE7; /*Music Tab Background Colour*/
+border-radius:50px;
+-webkit-transition: all 0.6s ease-in-out;
+-moz-transition: all 0.6s ease-in-out;
+-ms-transition: all 0.6s ease-in-out;
+-o-transition: all 0.6s ease-in-out;
+transition: all 0.6s ease-in-out;
+}
+
+#gaku {
+width:24px;
+height:24px;
+margin-top:3px;
+margin-left:3px;
+overflow:hidden;
+-webkit-transition: all 0.6s ease-in-out;
+-moz-transition: all 0.6s ease-in-out;
+-ms-transition: all 0.6s ease-in-out;
+-o-transition: all 0.6s ease-in-out;
+transition: all 0.6s ease-in-out;
+}
+
+#kero {
+height:26px;
+}
+
+#kero img {
+margin-right:10px;
+margin-left:3px;
+margin-top:3px;
+}
+
+#kero embed {
+margin-top:-5px;
+}
+
+#kero embed, #kero {
+-webkit-transition: all 0.6s ease-in-out;
+-moz-transition: all 0.6s ease-in-out;
+-ms-transition: all 0.6s ease-in-out;
+-o-transition: all 0.6s ease-in-out;
+transition: all 0.6s ease-in-out;
+}
+
+#ongaku:hover {
+
+width:80px;
+}
+
+#ongaku:hover #gaku {
+width:74px;
+}
+
+#ongaku:hover #kero {
+margin-left:-50px;
+}
+
+.playy, .pausee {
+margin-left:7px;
+margin-top:4px;
+position:relative;
+left:20px;
+font-size:15px;
+color:#FFF; /* play & pause buttons color */
+cursor:pointer;
+text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+
+}
+
+.pausee {display:none;}
+
+</style>
+<div id="ongaku"><div id="gaku"><div id="kero">
+<table cellspacing"0" cellpadding="0"><tr><td>
+<!-- Music Gif URL Here (Replace the Link)--><img src=" https://64.media.tumblr.com/tumblr_lu2dd4ocjj1qfoi4t.gif"></td><td>
+<!-- Music Code Here -->
+
+<div class="music-controls" onclick="songstart();">
+<div class="playy">►</div>
+<div class="pausee">♪</div>
+</a>
+<audio id="tune" src="INSERT SONG LINK HERE"audio"></audio>
+
+</td></tr>
+</table>
+</div></div></div>
